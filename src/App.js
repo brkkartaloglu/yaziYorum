@@ -4,6 +4,7 @@ import YaziDetayi from "./components/YaziDetayi";
 import YaziEkle from "./components/YaziEkle";
 import YaziDuzenle from "./components/YaziDuzenle";
 import YorumDuzenle from "./components/YorumDuzenle";
+import About from "./components/About";
 
 function App() {
   return (
@@ -12,11 +13,15 @@ function App() {
         <header></header>
         <div className="ui raised very padded text container segment">
           <Route path="/" exact component={YaziListesi}></Route>
+          <Route path="/about" exact component={About}></Route>
           <Route path="/posts/:id" exact component={YaziDetayi}></Route>
-          <Route path="/yaziekle"  exact component={YaziEkle}></Route>
+          <Route path="/yaziekle" exact component={YaziEkle}></Route>
           <Route path="/posts/:id/edit" exact component={YaziDuzenle}></Route>
-          <Route path="/posts/:id/comments/:id/edit" exact component={YorumDuzenle}></Route>
-          
+          <Route
+            path="/posts/:id/comments/:id/edit"
+            exact
+            component={YorumDuzenle}
+          ></Route>
         </div>
       </div>
     </Router>

@@ -1,7 +1,7 @@
-import {  useState } from "react";
+import { useState } from "react";
 import { api } from "./api";
 import { Link, Redirect } from "react-router-dom";
-import alertify from 'alertifyjs'
+import alertify from "alertifyjs";
 
 const YorumDuzenle = (props) => {
   const { id } = props.match.params;
@@ -25,7 +25,6 @@ const YorumDuzenle = (props) => {
     api()
       .put(`${path}`, commentBody)
       .then((response) => {
-        console.log("res",response);
         props.history.push(`/posts/${props.location.state.post}`);
       })
       .catch((error) => {
@@ -36,13 +35,13 @@ const YorumDuzenle = (props) => {
   };
 
   const direction = () => {
-      console.log("direct olmuyor")
+    console.log("direct olmuyor");
     return <Redirect to={`/posts/${props.location.state.post}`} />;
   };
   console.log("direk:", direct);
   return (
     <div>
-    <h3>YORUM DUZENLEME FORMU</h3>
+      <h3>YORUM DUZENLEME FORMU</h3>
       <form
         className="ui form"
         onSubmit={(event) => {

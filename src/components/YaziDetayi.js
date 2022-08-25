@@ -37,7 +37,6 @@ const YaziDetayi = (props) => {
 
   // yorum sil
   const handleDelete = (commentid) => {
-    console.log("taaa");
     api()
       .delete(`/posts/${id}/comments/${commentid}`)
       .then(() => {
@@ -52,9 +51,7 @@ const YaziDetayi = (props) => {
             setYorumlar(response.data);
           });
         //push
-        console.log(`pushla: /posts/${yaziDetayi.id}`);
-        // history.push(`/posts/`) //aşağıdaki durumu engellemek için anasayfadan döndürdüm
-        history.push(`/posts/${yaziDetayi.id}`); //doğrudan buraya pushlayınca state değişmeden yansıttığından silinen yorum gözüküyor sayfayı yenileyince gidiyor
+        history.push(`/posts/${yaziDetayi.id}`);
       })
       .catch(() => {
         setHata("Yorumu silme işleminde hata oluştu");

@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 import { Button, Icon, Modal } from "semantic-ui-react";
 import { api } from "./api";
-import { withRouter } from "react-router-dom";
 
-const SilModulYorum = ({yorum,open,hata,show,close,handleDelete}) => {
+const SilModulYorum = ({ yorum, open, hata, show, close, handleDelete }) => {
   // const [open, setOpen] = useState(false);
   // const [hata, setHata] = useState("");
   // const show = () => setOpen(true);
   // const close = () => setOpen(false);
 
-
-    // const handleDeletem=(id)=>{
-    //   api()
-    //   .delete(`/posts/${post}/comments/${id}`)
-    //   .then(()=>{
-    //       setHata("")
-    //       //modal close
-    //       close();
-    //       //push
-    //       console.log(`pushla: /posts/${post}`)
-    //      // history.push(`/posts/`) //aşağıdaki durumu engellemek için anasayfadan döndürdüm
-    //       history.push(`/posts/${post}`) //doğrudan buraya pushlayınca state değişmeden yansıttığından silinen yorum gözüküyor sayfayı yenileyince gidiyor
-    //   })
-    //   .catch(()=>{
-    //       setHata("Yorumu silme işleminde hata oluştu")
-    //   })
-    // }
+  // const handleDeletem=(id)=>{
+  //   api()
+  //   .delete(`/posts/${post}/comments/${id}`)
+  //   .then(()=>{
+  //       setHata("")
+  //       //modal close
+  //       close();
+  //       //push
+  //       console.log(`pushla: /posts/${post}`)
+  //      // history.push(`/posts/`) //aşağıdaki durumu engellemek için anasayfadan döndürdüm
+  //       history.push(`/posts/${post}`) //doğrudan buraya pushlayınca state değişmeden yansıttığından silinen yorum gözüküyor sayfayı yenileyince gidiyor
+  //   })
+  //   .catch(()=>{
+  //       setHata("Yorumu silme işleminde hata oluştu")
+  //   })
+  // }
 
   return (
     <React.Fragment>
@@ -36,9 +34,7 @@ const SilModulYorum = ({yorum,open,hata,show,close,handleDelete}) => {
       <Modal size="mini" open={open} onClose={close}>
         <Modal.Header>Yorumu Sil</Modal.Header>
         <Modal.Content>
-          <p>
-            Yorumu silmek istiyor musunuz?
-          </p>
+          <p>Yorumu silmek istiyor musunuz?</p>
           {hata && <p>{hata}</p>}
         </Modal.Content>
         <Modal.Actions>
@@ -54,4 +50,4 @@ const SilModulYorum = ({yorum,open,hata,show,close,handleDelete}) => {
   );
 };
 
-export default withRouter(SilModulYorum);
+export default SilModulYorum;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { api } from "./api";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { FaGithub } from "react-icons/fa";
 
 const YaziListesi = (props) => {
   const [yaziListesi, setYaziListesi] = useState([]);
@@ -36,6 +37,9 @@ const YaziListesi = (props) => {
     <>
       <div>
         <i className="tr flag"></i> <i className="book icon"></i>
+        <Link to={"/about"} className="header">
+          <FaGithub></FaGithub>
+        </Link>
         <h3 align="center">Türkçe Yazı Yorum Uygulaması</h3>
       </div>
       <div>

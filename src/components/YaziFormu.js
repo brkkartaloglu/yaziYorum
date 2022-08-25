@@ -20,7 +20,6 @@ const YaziFormu = (props) => {
       api()
         .put(`/posts/${id}`, yazi)
         .then((response) => {
-          console.log(response);
           history.push(`/posts/${id}`);
         })
         .catch((error) => {
